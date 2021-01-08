@@ -1,5 +1,5 @@
 {
-  "name": "svelte-site-info",
+  "name": "svelte-meta-data",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
     "src",
     "dist"
   ],
-  "description": "*Psst — looking for an app template? Go here --> [sveltejs/template](https://github.com/sveltejs/template)*",
+  "description": "A Svelte Component for handling SEO metadata & other relavent metadata",
   "version": "0.0.1",
   "author": "Jacob Stordahl",
   "license": "MIT"
