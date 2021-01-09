@@ -32,13 +32,34 @@
 </script>
 
 <svelte:head>
+  <meta
+    name="robots"
+    content={`${meta_data.noindex ? 'noindex' : 'index'},${meta_data.nofollow ? 'nofollow' : 'follow'}`} />
+  <meta
+    name="googlebot"
+    content={`${meta_data.noindex ? 'noindex' : 'index'},${meta_data.nofollow ? 'nofollow' : 'follow'}`} />
   {#each arrayToUse as item}
-    {#if item.key == 'openGraph' || item.key == 'twitter'}
+    {#if item.key == 'openGraph'}
       {#each createArr(item.data) as i}
-        <meta name={i.key} content={i.data}/>
+        {#if i.key == 'images'}
+          {#each i.data as img}
+            <meta property="og:image" content={img.url}/>
+            <meta property="og:image:alt" content={img.alt}/>
+            <meta property="og:image:width" content={img.width}/>
+            <meta property="og:image:height" content={img.height}/>
+          {/each}
+        {:else}
+          <meta property={"og:" + i.key} content={i.data}/>
+        {/if}
+      {/each}
+    {:else if item.key == 'twitter'}
+      <meta name="twitter:card" content="summary_large_image" />
+      {#each createArr(item.data) as i}
+        <meta name={"twitter:" + i.key} content={i.data}/>
       {/each}
     {:else if item.key == 'title'}
       <title>{item.data}</title>
+      
 		{:else if 
 			item.data !== undefined && 
 			item.data !== false && 

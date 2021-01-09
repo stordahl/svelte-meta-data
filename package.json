@@ -21,7 +21,7 @@
     "dist"
   ],
   "description": "A Svelte Component for handling SEO metadata & other relavent metadata",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Jacob Stordahl",
   "license": "MIT"
 }
