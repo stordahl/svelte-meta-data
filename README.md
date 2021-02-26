@@ -3,6 +3,7 @@
 *svelte-meta-data* is a svelte component used to manage all relevant meta data related to your website. This component was made to emulate the blog_info method from WordPress so you can access site meta data throughout your app with ease. This component also automates the creation of meta tags for SEO purposes. Simply pass an object containing all site &amp; SEO meta data to the component via props and voila!
 
 > ⚠️ This component is still in development and is not yet stable for production. ⚠️
+> SERIOUSLY THIS IS BROKEN, DON'T USE IT
 
 ## Getting Started
 
